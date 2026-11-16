@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "the-legacy"
+version = "0.1.0"
+description = "THE LEGACY - Ecosysteme numerique modulaire"
+requires-python = ">=3.11"
+dependencies = [
+    "discord.py>=2.4,<3",
+    "python-dotenv>=1.0,<2"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+    "pytest-cov>=5,<8"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
